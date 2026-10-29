@@ -15,10 +15,11 @@ export default function ProfileHeader({ name, bio, imageSrc }: ProfileHeaderProp
         width={144}
         height={144}
         priority
-        className="h-36 w-36 rounded-full border border-gray-300 object-cover"
+        unoptimized
+        className="h-28 w-28 rounded-full object-cover shadow-[0_12px_32px_-12px_rgba(120,64,32,0.55)] ring-4 ring-white/80 sm:h-32 sm:w-32 dark:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.8)] dark:ring-white/15"
       />
-      <h1 className="mt-4 text-xl font-bold">{name}</h1>
-      <p className="mt-1 text-sm text-gray-500">{bio}</p>
+      <h1 className="mt-6 text-2xl font-bold tracking-tight">{name}</h1>
+      <p className="mt-2 max-w-xs text-balance text-[15px] leading-relaxed opacity-70">{bio}</p>
     </header>
   );
 }
