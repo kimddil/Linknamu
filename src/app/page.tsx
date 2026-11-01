@@ -1,18 +1,12 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ProfileHeader from "@/components/ProfileHeader";
+import { links } from "@/lib/links";
 
 const profile = {
   name: "김종선",
   bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많아요.",
   imageSrc: "https://placehold.co/144x144/orange/white",
 };
-
-// 보여 주기용 더미 데이터 — 실제 내용은 나중에 교체
-const links = [
-  { title: "🐙 GitHub", url: "https://github.com/kimddil" },
-  { title: "LinkedIn", url: "https://www.linkedin.com" },
-  { title: "Blog", url: "https://example.com" },
-];
 
 export default function Home() {
   return (
@@ -23,13 +17,7 @@ export default function Home() {
         <div className="absolute -right-20 top-1/2 h-80 w-80 rounded-full bg-rose-200/40 blur-3xl dark:bg-rose-900/15" />
       </div>
       <ProfileHeader {...profile} />
-      <ul className="mt-12 flex w-full flex-col gap-4">
-        {links.map((link) => (
-          <li key={link.title}>
-            <LinkCard {...link} />
-          </li>
-        ))}
-      </ul>
+      <LinkList links={links} />
     </main>
   );
 }
